@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: warholaspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: warholaspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: warholaspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: warholaspipelinesjavascriptdocker 
+          image: mycontainerregistrydemonw.azurecr.io/warholaspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
